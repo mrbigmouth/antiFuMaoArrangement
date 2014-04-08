@@ -1,0 +1,106 @@
+<head>
+  <meta name="description" content="Free Web tutorials" />
+  <meta name="keywords" content="反黑箱,反服貿,反黑箱服貿,立法院,排班,facebook" />
+  <!-- program by mrbigmouth@ptt.cc design by oj113068@ptt.cc -->
+  <!-- 程設:mrbigmouth@ptt.cc 美術設計:oj113068@ptt.cc -->
+  <meta name="author" content="mrbigmouth@ptt.cc" />
+  <meta property="fb:app_id" content="1418798845045512" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="反服貿立院Facebook好友排班表" />
+  <meta property="og:url" content="http://antifumao.meteor.com/" />
+  <meta property="og:description" content="響應林飛帆號召，與好友一起排班輪守立法院。" />
+  <title>反黑箱服貿立院Facebook好友排班表</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <header id="top">
+    <h1>反黑箱服貿</h1>
+    <span class="facebook">
+      <img src="facebook.png" alt="以Facebook登入" title="以Facebook登入" />
+    </span>
+  </header>
+  <header id="header">
+    <h2>-Facebook-</h2>
+    <h1>立院排班表</h1>
+    <h2>一起排班輪守立法院</h2>
+  </header>
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fantifumao.meteor.com%2F&amp;width=400&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=1418798845045512" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px; width:400px; margin: 10px auto 10px auto; display: block" allowTransparency="true"></iframe>
+  <div id="banner">
+    <span class="img">
+      <img src="mainStep.jpg" alt="使用說明" title="使用說明" />
+      <img src="facebook.png" class="facebook" alt="以Facebook登入" title="以Facebook登入" />
+    </span>
+  </div>
+  {{> filter}}
+  {{> table}}
+  <footer id="footer">
+    Copyright © mrbigmouth@ptt.cc 2014.
+    　　Build by Meteor.com.
+  </footer>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+</body>
+
+<template name="filter">
+<form action="javascript:" id="filter" name="filter">
+  <div>
+    <span class="title">您的班表</span>
+    <span class="explain">視伺服器狀況，尚未讀取完畢的顯示皆是0人，請耐心等候</span>
+  </div>
+  <div>
+    選擇瀏覽時間：
+    <input type="text" class="date dateFrom" name="dateFrom" />
+    ～
+    <input type="text" class="date dateTo" name="dateTo" />
+    <span class="explain">建議與Bug回報請至<a href="http://www.ptt.cc/bbs/FuMouDiscuss/M.1396337200.A.029.html" target="_blank">ptt FuMouDiscuss板#1JEcem0f</a></span>
+  </div>
+</form>
+</template>
+
+<template name="table">
+<div id="table_warp">
+  <table id="table">
+    <thead>
+      <tr>
+        <th>時間＼日期</th>
+        {{#each days}}
+          <th>{{this.month}}/{{this.date}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each hours}}
+        <tr>
+          <th>{{this}}:00</th>
+          {{#each dayhours this}}
+            {{> dateData}}
+          {{/each}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <div class="explain">
+    本站僅統計有在本網站進行登記的人數資料，不代表實際前往立法院之人數。<br />
+    此外，你僅能得知你的Facebook好友前往的時段，也僅有你的好友能得知你前往的時段。
+  </div>
+</div>
+</template>
+
+<template name="dateData">
+<td>
+  <div class="{{useClass}}">
+    <span class="number">{{count}}人</span>
+    <div class="overlay" style="display: none;" data-id="{{goId}}">
+      <span class="icon2"></span>
+    </div>
+    <span class="icon" title="顯示詳細資料"></span>
+  </div>
+  <div class="friends">
+    {{#each friendGo}}
+      <p><a href="https://www.facebook.com/profile.php?id={{this.id}}" target="_blank">{{this.name}}</a></p>
+    {{/each}}
+  </div>
+</td>
+</template>

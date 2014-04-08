@@ -1,0 +1,207 @@
+body {
+  padding : 0;
+  margin : 0;
+  font-size: 16px;
+  font-family: "新細明體", "Times New Roman";
+  overflow-x: hidden;
+}
+
+#top {
+  color: #FFFFFF;
+  background-color: #000000;
+  padding: 5px;
+  position: relative;
+  height: 36px;
+}
+#top h1 {
+  position: absolute;
+  bottom:  0px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 15px;
+  text-align: center;
+}
+#top .facebook, #top .logout {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  cursor: pointer;
+}
+
+#header {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#header h1{
+  margin: 0;
+  padding: 0;
+  font-size:24px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+#header h2{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+#banner {
+  width: 100%;
+  background-color: #E6E6E6;
+  text-align: center;
+  padding: 5px;
+}
+#banner span.img {
+  position: relative;
+}
+#banner img {
+  border: 0;
+}
+#banner img.facebook {
+  position: absolute;
+  bottom: 5px;
+  left: 13px;
+  height: 20px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+p {
+  margin: 0;
+}
+span.login {
+  color: blue;
+}
+
+#filter {
+  margin: 15px auto 15px auto;
+  width: 800px;
+}
+#filter span.title {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+#filter span.explain {
+  float: right;
+}
+#filter input.date {
+  width: 100px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#table_warp {
+  width: 800px;
+  overflow-x : auto;
+  margin: 10px auto 40px auto;
+}
+#table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid black;
+  margin: 0 auto 0 auto;
+  width: 480px;
+}
+#table th {
+  width: 90px;
+  text-align: center;
+}
+#table th, #table td {
+  border: 1px solid #999999;
+}
+#table td {
+  vertical-align: top;
+  text-align: center;
+  font-size : 12px;
+  height: 28px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+#table div.td_warp {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#table div.td_warp.go span.number{
+  color: red;
+}
+#table div.td_warp.haveFriend {
+  background-color: #BEBEBE;
+}
+#table span.icon {
+  position: absolute;
+  bottom: -5px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  background-image: url('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/ui-lightness/images/ui-icons_228ef1_256x240.png');
+  background-position: -48px -16px;
+  cursor: pointer;
+  display: none;
+}
+#table div.td_warp.haveFriend span.icon {
+  display: inline-block;
+}
+#table div.td_warp div.overlay {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333333;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#table div.td_warp div.overlay span.icon2 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/ui-lightness/images/ui-icons_ffffff_256x240.png');
+  background-position: -32px -128px;
+  margin-top: 4px;
+}
+#table div.td_warp.go div.overlay span.icon2 {
+  background-position: -64px -128px;
+}
+#table div.friends {
+  width: 90px;
+  position: absolute;
+  background-color: #FFFFFF;
+  display: none;
+  z-index: 10;
+  text-align: left;
+}
+#table div.friends p {
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+#table_warp div.explain{
+  width: 745px;
+  margin: 0 auto 0 auto;
+  color: #FF0000;
+  text-align: right;
+}
+
+
+#footer {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #DDDDDD;
+  color: #666666;
+}
